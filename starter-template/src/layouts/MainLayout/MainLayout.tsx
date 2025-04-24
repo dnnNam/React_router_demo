@@ -13,6 +13,10 @@ export default function MainLayout({ children }: Props) {
             <li>
               <NavLink
                 to='/'
+                end
+                // style={({ isActive }) => ({
+                //   fontWeight: isActive ? 800 : undefined
+                // })}
                 className={({ isActive }) => {
                   const activeClass = isActive ? 'bg-gray-300' : ''
                   return `flex items-center rounded-lg 
@@ -20,7 +24,8 @@ export default function MainLayout({ children }: Props) {
                     text-gray-900 hover:bg-gray-300`
                 }}
               >
-                <span className='ml-3 font-bold'>Dashboard</span>
+                {({ isActive }) => <span className={`ml-3 ${isActive ? 'font-bold' : ''}`}>Dashboard</span>}
+                {/* render props */}
               </NavLink>
             </li>
             <li>
@@ -33,7 +38,7 @@ export default function MainLayout({ children }: Props) {
                     text-gray-900 hover:bg-gray-300`
                 }}
               >
-                <span className='ml-3'>Staff</span>
+                {({ isActive }) => <span className={`ml-3 ${isActive ? 'font-bold' : ''}`}>Staff</span>}
               </NavLink>
             </li>
             <li>
@@ -46,7 +51,7 @@ export default function MainLayout({ children }: Props) {
                     text-gray-900 hover:bg-gray-300`
                 }}
               >
-                <span className='ml-3'>About</span>
+                {({ isActive }) => <span className={`ml-3 ${isActive ? 'font-bold' : ''}`}>About</span>}
               </NavLink>
             </li>
           </ul>
