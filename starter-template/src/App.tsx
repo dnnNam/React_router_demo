@@ -1,3 +1,5 @@
+import AddStaff from 'components/AddStaff'
+import StaffItem from 'components/StaffItem'
 import MainLayout from 'layouts/MainLayout'
 import About from 'pages/About'
 import Dashboard from 'pages/Dashboard'
@@ -12,6 +14,8 @@ function App() {
           <Route path='/' element={<Dashboard />} />
           <Route path='/about' element={<About />} />
           <Route path='/staff' element={<StaffList />} />
+          <Route path='/staff/:id' element={<StaffItem />} />
+          <Route path='/staff/add' element={<AddStaff />} />
         </Routes>
       </MainLayout>
 
