@@ -16,6 +16,7 @@ function App() {
           <Route path='/staff' element={<StaffList />} />
           <Route path='/staff/:id' element={<StaffItem />} />
           <Route path='/staff/add' element={<AddStaff />} />
+          <Route path='*' element={<div>404 page</div>} />
         </Routes>
       </MainLayout>
 
