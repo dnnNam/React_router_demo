@@ -3,6 +3,7 @@ import StaffItem from 'components/StaffItem'
 import MainLayout from 'layouts/MainLayout'
 import About from 'pages/About'
 import Dashboard from 'pages/Dashboard'
+import NotFound from 'pages/NotFound'
 import StaffList from 'pages/StaffList'
 import { Routes, Route } from 'react-router-dom'
 
@@ -16,7 +17,7 @@ function App() {
           <Route path='/staff' element={<StaffList />} />
           <Route path='/staff/:id' element={<StaffItem />} />
           <Route path='/staff/add' element={<AddStaff />} />
-          <Route path='*' element={<div>404 page</div>} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </MainLayout>
 
