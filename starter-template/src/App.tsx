@@ -15,11 +15,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Dashboard />} />
           <Route path='/about' element={<About />} />
-          <Route path='/staff' element={<Staff />}>
-            <Route path='/staff/:id' element={<StaffItem />} />
-            <Route path='/staff/add' element={<AddStaff />} />
-            <Route index element={<StaffList />} />
-          </Route>
+          <Route path='/staff/*' element={<Staff />} />
 
           {/* <Route path='/staff' element={<Staff />} />
           <Route path='/staff/:id' element={<StaffItem />} />

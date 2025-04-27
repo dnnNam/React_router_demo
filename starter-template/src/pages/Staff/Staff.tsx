@@ -1,7 +1,8 @@
 import AddStaff from 'components/AddStaff'
+import StaffItem from 'components/StaffItem'
 import StaffList from 'components/StaffList/StaffList'
 import { profile } from 'console'
-import { NavLink, Outlet } from 'react-router-dom'
+import { NavLink, Outlet, Route, Routes } from 'react-router-dom'
 
 export default function Staff() {
   return (
@@ -39,8 +40,17 @@ export default function Staff() {
           </li>
         </ul>
       </div>
+      {/* có thể tách route trong  các component khác 
+        khi click vào add ra not found thì phải chỉnh route cha thêm /* có nghĩa là nó phải match ngoài /staff/add
+        khi tách component thì không cần thêm /staff nữa và không nhận được giá trị outlet nữa
+      */}
+      <Routes>
+        <Route path=':id' element={<StaffItem />} />
+        <Route path='add' element={<AddStaff />} />
+        <Route index element={<StaffList />} />
+      </Routes>
 
-      <Outlet context={{ profile: { name: 'Duoc' } }} />
+      {/* <Outlet context={{ profile: { name: 'Duoc' } }} /> */}
 
       {/* <StaffList /> */}
 
