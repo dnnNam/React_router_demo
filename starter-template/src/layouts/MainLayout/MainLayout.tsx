@@ -1,8 +1,16 @@
 import React from 'react'
-import { Link, NavLink, Route, Routes } from 'react-router-dom'
+import { Link, NavLink, Route, Routes, useLocation } from 'react-router-dom'
 
 interface Props {
   children?: React.ReactNode
+}
+
+const ExtraContent = () => {
+  // muốn lấy ra được cái location chúng ta dùng 1 cái hook có tên useLocation
+  const location = useLocation()
+  console.log(location)
+
+  return <div className='text-red-800'>Url is /about</div>
 }
 export default function MainLayout({ children }: Props) {
   return (
@@ -56,11 +64,11 @@ export default function MainLayout({ children }: Props) {
             </li>
           </ul>
 
-          {/* cách route có macth với location như thế nào  khi có  localhost3000/about thì thằng routes có giá trị là about
+          {/* cách routes có macth với location như thế nào  khi có  localhost3000/about thì thằng routes có giá trị là about
           nếu vào staff thì nó sẽ có giá trị là staff 
           chúng ta có thể fix cứng là location là about  thì lúc nào thằng route trong đều nhận giá trị là about  */}
-          <Routes location='about'>
-            <Route path='/about' element={<div className='text-red-800'>Url is /about</div>}></Route>
+          <Routes location='/about'>
+            <Route path='/about' element={<ExtraContent />}></Route>
           </Routes>
         </div>
       </aside>
