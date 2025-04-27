@@ -11,7 +11,8 @@ export default function Staff() {
         <ul className='-mb-px flex flex-wrap'>
           <li className='mr-2'>
             <NavLink
-              to='/staff/list'
+              to='/staff'
+              end
               className={({ isActive }) => `active inline-block rounded-t-lg border-b-2 p-4
                ${
                  isActive

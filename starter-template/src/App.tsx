@@ -18,7 +18,7 @@ function App() {
           <Route path='/staff' element={<Staff />}>
             <Route path='/staff/:id' element={<StaffItem />} />
             <Route path='/staff/add' element={<AddStaff />} />
-            <Route path='list' element={<StaffList />} />
+            <Route index element={<StaffList />} />
           </Route>
 
           {/* <Route path='/staff' element={<Staff />} />
