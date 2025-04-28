@@ -28,17 +28,15 @@ function App() {
   return (
     <div className='App'>
       <MainLayout>
+        {/* cách 1  */}
         {element}
-        {/* <Routes> */}
-        {/* <Route path='/' element={<Dashboard />} />
+        {/* cách 2 */}
+        {/* <Routes>
+          <Route path='/' element={<Dashboard />} />
           <Route path='/about' element={<About />} />
-          <Route path='/staff/*' element={<Staff />} /> */}
-
-        {/* <Route path='/staff' element={<Staff />} />
-          <Route path='/staff/:id' element={<StaffItem />} />
-          <Route path='/staff/add' element={<AddStaff />} /> */}
-        {/* <Route path='*' element={<NotFound />} /> */}
-        {/* </Routes> */}
+          <Route path='/staff/*' element={<Staff />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes> */}
       </MainLayout>
 
       {/* <Dashboard />

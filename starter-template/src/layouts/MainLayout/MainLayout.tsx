@@ -67,9 +67,9 @@ export default function MainLayout({ children }: Props) {
           {/* cách routes có macth với location như thế nào  khi có  localhost3000/about thì thằng routes có giá trị là about
           nếu vào staff thì nó sẽ có giá trị là staff 
           chúng ta có thể fix cứng là location là about  thì lúc nào thằng route trong đều nhận giá trị là about  */}
-          <Routes location='/about'>
+          {/* <Routes location='/about'>
             <Route path='/about' element={<ExtraContent />}></Route>
-          </Routes>
+          </Routes> */}
         </div>
       </aside>
       <main className='col-span-3 h-full py-4 px-3'>{children}</main>
