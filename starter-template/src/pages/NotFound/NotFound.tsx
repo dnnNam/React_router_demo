@@ -6,9 +6,15 @@ import { Navigate, useNavigate } from 'react-router-dom'
 // thì chúng ra dùng 1 cái hook useNavigate
 export default function NotFound() {
   const navigate = useNavigate()
+  // react route cung cấp cho chúng ra 1 cái state giúp chúng ta giao tiếp
+  // giữa các page với nhau
+  // ví dụ page not found giao tiếp page dashboard
   useEffect(() => {
     setTimeout(() => {
-      navigate(-1)
+      // navigate(-1)
+      navigate('/', {
+        state: 'Redirect from not found'
+      })
     }, 2000)
   }, [navigate])
   return <div>Not Found</div>
