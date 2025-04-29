@@ -3,6 +3,7 @@ import About from 'pages/About'
 import Dashboard from 'pages/Dashboard'
 import NotFound from 'pages/NotFound'
 import Staff from 'pages/Staff'
+import { useEffect } from 'react'
 import { Route, Routes, useLocation, useRoutes, useSearchParams } from 'react-router-dom'
 
 function App() {
@@ -32,8 +33,18 @@ function App() {
   // query-string
   const location = useLocation()
   const [searchParams] = useSearchParams()
-  console.log(location)
-  console.log('searchParams', Object.fromEntries([...searchParams]))
+  // console.log(location)
+
+  // muốn monitor checking param
+  // khi mà cái query Params thay đổi thì chúng ta làm 1 cái hành động gì đấy
+  useEffect(() => {
+    console.log('searchParams', Object.fromEntries([...searchParams]))
+  }, [searchParams])
+
+  // checking location
+  useEffect(() => {
+    console.log('location', location)
+  }, [location])
 
   return (
     <div className='App'>
